@@ -9,6 +9,15 @@
 <p>
     @Html.ActionLink("Utwórz nowy przedmiot", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Wybierz Wydział: @Html.DropDownList("SelectedDepartment", "All")
+        <input type="submit" value="Filtruj" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
