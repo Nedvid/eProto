@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<eProto.Models.Department>
 @{
-    ViewBag.Title = "Departments";
+    ViewBag.Title = "Wydziały";
 }
-<h2>Departments</h2>
+<h2>Wydziały</h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Utwórz nowy wydział", "Create")
 </p>
 <table class="table">
     <tr>
@@ -32,9 +32,9 @@
                 @Html.DisplayFor(modelItem => item.Administrator.FullName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.DepartmentID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.DepartmentID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.DepartmentID })
+                @Html.ActionLink("Edytuj", "Edit", new { id = item.DepartmentID }) |
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.DepartmentID }) |
+                @Html.ActionLink("Usuń", "Delete", new { id = item.DepartmentID })
             </td>
         </tr>
     }

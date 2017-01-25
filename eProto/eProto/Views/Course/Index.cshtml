@@ -1,24 +1,24 @@
 ﻿@model IEnumerable<eProto.Models.Course>
 
 @{
-    ViewBag.Title = "Courses";
+    ViewBag.Title = "Przedmioty";
 }
 
-<h2>Courses</h2>
+<h2>Przedmioty</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Utwórz nowy przedmiot", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CourseID)
+            ID
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            Przedmiot
         </th>
         <th>
-            Department
+            Wydział
         </th>
         <th></th>
     </tr>
@@ -35,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.Department.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CourseID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CourseID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CourseID })
+            @Html.ActionLink("Edytuj", "Edit", new { id=item.CourseID }) |
+            @Html.ActionLink("Szczegóły", "Details", new { id=item.CourseID }) |
+            @Html.ActionLink("Usuń", "Delete", new { id=item.CourseID })
         </td>
     </tr>
 }

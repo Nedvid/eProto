@@ -1,33 +1,33 @@
 ﻿@model IEnumerable<eProto.Models.Student>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Studenci";
 }
 
-<h2>Index</h2>
+<h2>Studenci</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Utwórz nowego studenta", "Create")
 </p>
 
 @using (Html.BeginForm())
 {
     <p>
-        Find by name: @Html.TextBox("SearchString")
-        <input type="submit" value="Search" />
+        Szukaj: @Html.TextBox("SearchString")
+        <input type="submit" value="Szukaj" />
     </p>
 }
 
 <table class="table">
         <tr>
             <th>
-                @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+                @Html.ActionLink("Nazwisko", "Index", new { sortOrder = ViewBag.NameSortParm })
             </th>
             <th>
-                First Name
+                Imię
             </th>
             <th>
-                @Html.ActionLink("Enrollment Date", "Index", new { sortOrder = ViewBag.DateSortParm })
+                @Html.ActionLink("Data Rozpoczęcia", "Index", new { sortOrder = ViewBag.DateSortParm })
             </th>
             <th></th>
         </tr>
@@ -46,9 +46,9 @@
                     @Html.DisplayFor(modelItem => item.EnrollmentDate)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    @Html.ActionLink("Edytuj", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Szczegóły", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Usuń", "Delete", new { id = item.ID })
                 </td>
             </tr>
         }

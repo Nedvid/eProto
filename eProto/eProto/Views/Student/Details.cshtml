@@ -1,17 +1,17 @@
 ﻿@model eProto.Models.Student
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Szczegóły";
 }
 
-<h2>Details</h2>
+<h2>Szczegóły</h2>
 
 <div>
     <h4>Student</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.LastName)
+            Nazwisko
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FirstMidName)
+            Imię
         </dt>
 
         <dd>
@@ -27,20 +27,21 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.EnrollmentDate)
+            Data Rozpoczęcia
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.EnrollmentDate)
         </dd>
+        <hr />
         <dt>
-            @Html.DisplayNameFor(model => model.Enrollments)
+            Przedmioty
         </dt>
         <dd>
             <table class="table">
                 <tr>
-                    <th>Course Title</th>
-                    <th>Grade</th>
+                    <th>Przedmiot</th>
+                    <th>Ocena</th>
                 </tr>
                 @foreach (var item in Model.Enrollments)
                 {

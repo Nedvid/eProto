@@ -1,21 +1,21 @@
 ﻿@model eProto.ViewModels.InstructorIndexData
 
 @{
-    ViewBag.Title = "Instructors";
+    ViewBag.Title = "Wykładowcy";
 }
 
-<h2>Instructors</h2>
+<h2>Wykładowcy</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Utwórz nowego wykładowce", "Create")
 </p>
 <table class="table">
     <tr>
-        <th>Last Name</th>
-        <th>First Name</th>
-        <th>Hire Date</th>
-        <th>Office</th>
-        <th>Courses</th>
+        <th>Nazwisko</th>
+        <th>Imię</th>
+        <th>Data Rozpoczęcia</th>
+        <th>Pokój</th>
+        <th>Przedmioty</th>
         <th></th>
     </tr>
 
@@ -51,10 +51,10 @@
                 }
             </td>
             <td>
-                @Html.ActionLink("Select", "Index", new { id = item.ID }) |
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                @Html.ActionLink("Wybierz", "Index", new { id = item.ID }) |
+                @Html.ActionLink("Edytuj", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Usuń", "Delete", new { id = item.ID })
             </td>
         </tr>
     }
@@ -63,13 +63,13 @@
 
 @if (Model.Courses != null)
 {
-    <h3>Courses Taught by Selected Instructor</h3>
+    <h3>Przedmioty Wybranego Wykładowcy</h3>
     <table class="table">
         <tr>
             <th></th>
-            <th>Number</th>
-            <th>Title</th>
-            <th>Department</th>
+            <th>ID</th>
+            <th>Przedmiot</th>
+            <th>Wydział</th>
         </tr>
 
         @foreach (var item in Model.Courses)
@@ -101,12 +101,12 @@
 @if (Model.Enrollments != null)
 {
     <h3>
-        Students Enrolled in Selected Course
+        Studenci
     </h3>
     <table class="table">
         <tr>
-            <th>Name</th>
-            <th>Grade</th>
+            <th>Nazwisko, Imię</th>
+            <th>Ocena</th>
         </tr>
         @foreach (var item in Model.Enrollments)
         {
