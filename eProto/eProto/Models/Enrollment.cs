@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using eProto.Models;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace eProto.Models
 {
@@ -11,6 +7,7 @@ namespace eProto.Models
         public int EnrollmentID { get; set; }
         public int CourseID { get; set; }
         public int StudentID { get; set; }
+        [DisplayFormat(NullDisplayText = "No grade")]
         public int Grade { get; set; }
 
         public virtual Course Course { get; set; }
