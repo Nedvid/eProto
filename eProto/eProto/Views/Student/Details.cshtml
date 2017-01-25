@@ -42,6 +42,7 @@
                 <tr>
                     <th>Przedmiot</th>
                     <th>Ocena</th>
+                    <th>Opcje</th>
                 </tr>
                 @foreach (var item in Model.Enrollments)
                 {
@@ -51,6 +52,9 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Grade)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edytuj", "Edit_Grade", new { id = item.EnrollmentID })
                         </td>
                     </tr>
                 }

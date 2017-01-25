@@ -155,6 +155,61 @@ namespace eProto.Controllers
             return View(studentToUpdate);
         }
 
+
+
+        // GET: Student/Edit/5
+        public ActionResult Edit_Grade(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Enrollment enrollment = db.Enrollments.Find(id);
+            if (enrollment == null)
+            {
+                return HttpNotFound();
+            }
+            return View(enrollment);
+        }
+
+        // POST: Student/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost, ActionName("Edit_Grade")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit_GradePost(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var gradeToUpdate = db.Enrollments.Find(id);
+
+            if (TryUpdateModel(gradeToUpdate, "",
+               new string[] { "Grade" }))
+            {
+                try
+                {
+                    db.SaveChanges();
+
+                    return RedirectToAction("Index");
+                }
+                catch (RetryLimitExceededException /* dex */)
+                {
+                    //Log the error (uncomment dex variable name and add a line here to write a log.
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                }
+            }
+            return View(gradeToUpdate);
+
+        }
+
+
+
+
+
         // GET: Student/Delete/5
         public ActionResult Delete(int? id, bool? saveChangesError = false)
         {
